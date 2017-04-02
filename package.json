@@ -1,0 +1,15 @@
+{
+  "name": "async-each",
+  "version": "0.0.1",
+  "description": "Vanilla implementation of async each of node",
+  "main": "each.js",
+  "scripts": {
+    "test": "scripts/test/test.sh"
+  },
+  "author": "Prakhar Joshi",
+  "license": "ISC",
+  "dependencies": {
+    "istanbul": "0.4.5",
+    "mocha": "3.2.0"
+  }
+}
