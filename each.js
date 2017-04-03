@@ -1,5 +1,4 @@
-var fs = require('fs'),
-  _ = require('lodash');
+var _ = require('lodash');
 
 module.exports = function(arr, fn, cb) {
 
@@ -15,22 +14,20 @@ module.exports = function(arr, fn, cb) {
     return cb(new Error('A valid callback is required'));
   }
 
-  var count = 0,
-    flag = false;
+  var flag = false;
 
   for (var i=0; i<arr.length; i++) {
     if (flag) {
       return;
     }
-    count++;
     fn(arr[i], function (err, res) {
       if (err) {
         flag = true;
         return cb(err);
       }
     });
-    if (count >= arr.length) {
-      return;
+    if (i == arr.length - 1) {
+      return cb();
     }
   }
 };
